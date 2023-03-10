@@ -80,10 +80,11 @@ script.onload = () => {
     $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange', () => {
       if (fullScreenRequestPending) {
         fullScreenRequestPending = false;
-        
+        screen.orientation.lock('landscape-primary');
+
         playButton.hide();
         container.show();
-        
+
         if (quitRequested) {
           quitRequested = false;
         } else {
