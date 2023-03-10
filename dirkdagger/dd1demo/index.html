@@ -119,11 +119,11 @@
         if (isMobile) {
           var fullscreenFunc = undefined;
           if(canvas.requestFullScreen)
-              fullscreenFunc = canvas.requestFullScreen;
+              fullscreenFunc = canvas.requestFullScreen.bind(canvas);
           else if(canvas.webkitRequestFullScreen)
-              fullscreenFunc = canvas.webkitRequestFullScreen;
+              fullscreenFunc = canvas.webkitRequestFullScreen.bind(canvas);
           else if(canvas.mozRequestFullScreen)
-              fullscreenFunc = canvas.mozRequestFullScreen;
+              fullscreenFunc = canvas.mozRequestFullScreen.bind(canvas);
  
           fullscreenFunc().then(() => screen.orientation.lock('landscape-primary'));
         }
