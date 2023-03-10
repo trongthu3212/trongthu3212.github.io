@@ -8,12 +8,16 @@
     <link rel="icon" href="Styling/favicon.ico">
     <link rel="stylesheet" href="Styling/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
   </head>
   <body>
     <div id="game-container" class="unity-desktop">
       <div id="background" class="unity-desktop"></div>
       <div id="background-filter" class="unity-desktop"></div>
       <div id="unity-wholeview-container">
+        <button id="play-button" type="submit">
+          <img src="Styling/buttonPlay.png" width=128 height=128 />
+        </button>
         <div id="unity-container" class="unity-desktop">
           <canvas id="unity-canvas" width=1024 height=576></canvas>
           <div id="unity-loading-bar">
@@ -43,13 +47,14 @@
       </div>
     </div>
     <script>
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var warningBanner = document.querySelector("#unity-warning");
-      var helpSection = document.querySelector("#help");
+      var container = $("#unity-container");
+      var canvas = $("#unity-canvas");
+      var loadingBar = $("#unity-loading-bar");
+      var progressBarFull = $("#unity-progress-bar-full");
+      var fullscreenButton = $("#unity-fullscreen-button");
+      var warningBanner = $("#unity-warning");
+      var helpSection = $("#help");
+      var playButton = $('#play-button')
 
       // Shows a temporary message banner/ribbon for a few seconds, or
       // a permanent error message on top of the canvas if type=='error'.
@@ -88,7 +93,7 @@
         showBanner: unityShowBanner,
       };
 
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+      const isMobile = /*/iPhone|iPad|iPod|Android/i.test(navigator.userAgent);*/ true;
 
       if (isMobile) {
         // Mobile device style: fill the whole browser client area with the game canvas:
@@ -97,46 +102,88 @@
         meta.name = 'viewport';
         meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
         document.getElementsByTagName('head')[0].appendChild(meta);
-        container.className = "unity-mobile";
-        canvas.className = "unity-mobile";
-
-        canvas.style.width = "854px";
-        canvas.style.height = "480px";
         
-        helpSection.style.display = "none";
+        container.attr("class", "unity-mobile");
+        canvas.attr("class", "unity-mobile");
+
+        helpSection.hide();
+        container.hide();
+
+        console.log(playButton)
+
+        playButton.show();
       } else {
         // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
 
-        canvas.style.width = "1024px";
-        canvas.style.height = "576px";
+        canvas.width("1024px");
+        canvas.height("576px");
+        
+        playButton.hide();
+        container.show();
       }
 
-      loadingBar.style.display = "block";
+      loadingBar.show();
 
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
-        if (isMobile) {
-          var fullscreenFunc = undefined;
-          if(canvas.requestFullScreen)
-              fullscreenFunc = canvas.requestFullScreen.bind(canvas);
-          else if(canvas.webkitRequestFullScreen)
-              fullscreenFunc = canvas.webkitRequestFullScreen.bind(canvas);
-          else if(canvas.mozRequestFullScreen)
-              fullscreenFunc = canvas.mozRequestFullScreen.bind(canvas);
- 
-          fullscreenFunc().then(() => screen.orientation.lock('landscape-primary'));
-        }
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
+        var unityInstanceGlob = null;
+        var fullScreenRequestPending = false;
+        
+        // Very unreliable, just make our own var
+        $(document).on('webkitfullscreenchange mozfullscreenchange fullscreenchange', () => {
+          if (fullScreenRequestPending) {
+            fullScreenRequestPending = false;
+            
+            playButton.hide();
+            container.show();
+            
+            startGame();
+          } else {
+            unityInstanceGlob?.Quit(() => {
+              console.log('Please')
+              container.hide();
+              playButton.show();
+            });
+            
+            unityInstanceGlob = null;
+          }
         });
+
+        let startGame = () => {
+            createUnityInstance(canvas.get(0), config, (progress) => {
+              progressBarFull.width(100 * progress + "%");
+            }).then((unityInstance) => {
+              loadingBar.hide();
+              if (isMobile) {
+                unityInstance.SetFullscreen(1);
+                unityInstanceGlob = unityInstance;
+              } else {
+                fullscreenButton.onclick = () => {
+                  unityInstance.SetFullscreen(1);
+                };
+              }
+            }).catch((message) => {
+              alert(message);
+            });
+        };
+        if (isMobile) {
+          playButton.click(() => {
+            let containerRaw = container.get(0);
+            let fullscreenFunc = undefined;
+            if(containerRaw.requestFullScreen)
+                fullscreenFunc = containerRaw.requestFullScreen.bind(containerRaw);
+            else if(containerRaw.webkitRequestFullScreen)
+                fullscreenFunc = containerRaw.webkitRequestFullScreen.bind(containerRaw);
+            else if(containerRaw.mozRequestFullScreen)
+                fullscreenFunc = containerRaw.mozRequestFullScreen.bind(containerRaw);
+
+            fullScreenRequestPending = true;
+            fullscreenFunc();
+          });
+        } else {
+          startGame();
+        }
       };
       document.body.appendChild(script);
     </script>
