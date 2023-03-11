@@ -30,9 +30,10 @@
   }
   
   .StickyContainer {
-    position: fixed;
+    position: sticky;
     padding-right: 2.5rem;
     width: inherit;
+    top: -0.5rem;
   }
   
   #PaddingOverflowHidder {
