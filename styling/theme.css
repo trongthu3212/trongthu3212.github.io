@@ -18,11 +18,16 @@
   #PaddingOverflowHidder {
     display: none;
   }
+  
+  #ShortPortfolioContainerInner {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   #ShortPortfolioContent {
-    padding-left: 2rem;
+    padding-left: 3rem;
   }
   
   .StickyContainer {
@@ -52,7 +57,7 @@
 
 @media only screen and (min-width: 992px) {
   #ShortPortfolioContent {
-    padding-left: 3rem;
+    padding-left: 5rem;
   }
 }
 
