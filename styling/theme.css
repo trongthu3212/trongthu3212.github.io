@@ -11,8 +11,7 @@
   }
 
   #ShortPortfolioContent div {
-    padding-top: 11rem;
-    margin-top: -11rem;
+    scroll-margin-top: 14rem;
   }
   
   #PaddingOverflowHidder {
@@ -48,10 +47,7 @@
   }
 
   #ShortPortfolioContent div {
-    padding-top: 2.5rem;
-    margin-top: -2.5rem;
-    
-    overflow: hidden;
+    scroll-margin-top: 2.5rem;
   }
 }
 
