@@ -32,7 +32,7 @@
   .StickyContainer {
     position: sticky;
     padding-right: 2.5rem;
-    width: inherit;
+    width: 100%;
     top: -0.5rem;
   }
   
