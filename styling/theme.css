@@ -2,12 +2,7 @@
 
 @media only screen and (max-width: 768px) {
   #ShortPortfolioTOC {
-    position: sticky;
-    z-index: 1020;
-    top: 0;
-
-    padding-bottom: 1.5rem;
-    background-color: #303030;
+    display: none;
   }
 
   #ShortPortfolioContent div {
@@ -27,6 +22,14 @@
 @media only screen and (min-width: 768px) {
   #ShortPortfolioContent {
     padding-left: 3rem;
+  }
+  
+  #ShortPortfolioTOC {
+    display: block;
+  }
+  
+  #ShortPortfolioTOCMobileNav {
+    display: none;
   }
   
   .StickyContainer {

@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="styling/theme.css">
     <link rel="icon" href="styling/penguin.png">
     <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +21,24 @@
   <body>
       <div class="mx-3 my-4 container mx-auto" id="ShortPortfolioContainer">
         <div class="row" id="ShortPortfolioContainerInner">
+          <nav class="navbar" id="ShortPortfolioTOCMobileNav">
+            <div class="container-fluid">
+              <h2 style="text-align: center" class="my-auto">Portfolio</h2>
+ 
+              <button class="navbar-toggler ms-auto" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars" style="color: #FFFFFF"></i>
+              </button>
+            </div>
+          </nav>
+          <div class="collapse" id="navbarToggleExternalContent3">
+            <div>
+              <button class="btn btn-link btn-block border-bottom m-0"><a href="#Projects">Dự án</a></button>
+              <button class="btn btn-link btn-block border-bottom m-0"><a href="#About">Về mình</a></button>
+              <button class="btn btn-link btn-block m-0"><a href="#Contact">Liên hệ</a></button>
+            </div>
+          </div>
           <div class="col-md-3 col-sm-12 py-3" id="ShortPortfolioTOC">
             <div class="StickyContainer">
                 <h3 class="text-center">Mục lục</h3>
@@ -49,7 +68,19 @@
                     <li>Thêm hỗ trợ cho các ứng dụng S^3 sử dụng các thư viện OpenGL ES 1/2, OpenVG</li>
                     <li>Thiết kế và làm UI cho phiên bản desktop (sử dụng QT) của giả lập</li>
                   </ul>
-                <a href="https://anni.12l1.com/dirkdagger/">Dirk Dagger and the Fallen Idol - Unity port</a>
+                <a href="https://github.com/dtt3212/DD_Engine">Dirk Dagger and the Fallen Idol - Unity port</a>
+                  <ul class="mt-3">
+                    <li>
+                  Bản cấy dời trò thám tử trên nền tảng N-Gage 2.0 chạy trên điện thoại Nokia cũ sang Unity, sử dụng gói dữ liệu sẵn có trong dữ liệu trò chơi.</li>
+                    <li>Đơn thuần là trò thám tử, một số minigame sử dụng Physics2D của Unity (mô phỏng gió cản ruồi bay hay độ cân bằng của con lắc đồng hồ).</li>
+                    <li>Phần lớn animation trong bản port sử dụng các tween từ thư viện <a href="http://dotween.demigiant.com/index.php">DOTween.</a></li>
+                    <li>Chơi thử demo tại <a href="https://anni.12l1.com/dirkdagger/dd1demo/">đây.</a></li>
+                  </ul>
+                <a href="https://github.com/EKA2L1/nofun">Nofun - Giả lập nền tảng Mophun</a>
+                  <ul class="mt-3">
+                    <li>Giả lập lớp trung gian được sử dụng trong mấy trò điện thoại cũ (Worms, The DaVinci Code 3D), những trò này được chạy trong môi trường máy ảo có sẵn thư viện cho việc chạy Game, gọi là Mophun.</li>
+                    <li>Dự án sử dụng Unity để vẽ đồ họa, chơi nhạc và video. Dùng Unity cho nhanh, không phải động chạm tới code C++ dịch hơi chậm hay FFMPEG, OpenGL, ... Mặc dù Unity hơi cao cấp 1 chút.</li>
+                  </ul>
               </div>
             </div>
             <div id="About" name="About" class="pb-3">
@@ -59,9 +90,9 @@
                   <img style="height: 70%; width: 70%; object-fit: contain;" src="styling/penguin.png">
                 </div>
                 <div class="col-9 ps-1">
-                  <p>Mình là Đỗ Trọng Thư, các dự án khác của mình hoặc là làm trên một tài khoản Github khác hoặc là tài khoản này. Mình thích tiền.</p>
-                  <p>Các công nghệ mình kiên trì học là có thể học được. Cố nhồi vào đầu thì chắc không.</p>
-                  <p>Mình không đăng thông tin chi tiết hơn về mình tại đây. Mọi thông tin khác bạn cần hỏi có thể hỏi qua các liên hệ của mình ở dưới. Mình thường xuyên kiểm tra các liên hệ đó.</p>
+                  <p>Mình là Đỗ Trọng Thư, các dự án khác của mình hoặc là làm trên một tài khoản Github khác hoặc là tài khoản này.</p>
+                  <p>Các công nghệ mình kiên trì học là có thể học được. Cố nhồi vào đầu thì chắc không. Nhưng khá chắc mấy thứ mình đang làm công khai ở trên, chả ai dùng, hoặc dùng rất ít, đặc biệt Việt Nam đây :P</p>
+                  <p>Các liên hệ của mình ở dưới nếu bạn cần hỏi hay yêu cầu gì đó cá nhân. Mình thường xuyên kiểm tra các liên hệ đó.</p>
                 </div>
               </div>
             </div>
@@ -70,6 +101,7 @@
               <div class="SectionContent">
                 <ul>
                   <li><a href="mailto:lmt42@yandex.com">Qua mail</a></li>
+                  <li>Discord: bent#7447</li>
                 </ul>
               </div>
             </div>
