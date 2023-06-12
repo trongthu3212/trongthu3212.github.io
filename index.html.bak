@@ -1,0 +1,113 @@
+<html>
+  <head>
+    <script src="external/mdb/js/mdb.min.js"></script>
+    <title>Đỗ Trọng Thư - Short Portfolio</title>
+    <link rel="stylesheet" href="styling/theme.css">
+    <link rel="icon" href="styling/penguin.png">
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Thông tin ngắn về Đỗ Trọng Thư và dự án.">
+    <meta name="author" content="Đỗ Trọng Thư">
+
+    <meta property="og:title" content="Đỗ Trọng Thư - Short Portfolio">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dtt3212.github.io">
+    <meta property="og:description" content="Thông tin ngắn về Đỗ Trọng Thư và dự án.">
+  </head>
+  <body>
+      <div class="mx-3 my-4 container mx-auto" id="ShortPortfolioContainer">
+        <div class="row" id="ShortPortfolioContainerInner">
+          <nav class="navbar" id="ShortPortfolioTOCMobileNav">
+            <div class="container-fluid">
+              <h2 style="text-align: center" class="my-auto">Portfolio</h2>
+ 
+              <button class="navbar-toggler ms-auto" type="button" data-mdb-toggle="collapse"
+                data-mdb-target="#navbarToggleExternalContent3" aria-controls="navbarToggleExternalContent3"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars" style="color: #FFFFFF"></i>
+              </button>
+            </div>
+          </nav>
+          <div class="collapse" id="navbarToggleExternalContent3">
+            <div>
+              <button class="btn btn-link btn-block border-bottom m-0"><a href="#Projects">Dự án</a></button>
+              <button class="btn btn-link btn-block border-bottom m-0"><a href="#About">Về mình</a></button>
+              <button class="btn btn-link btn-block m-0"><a href="#Contact">Liên hệ</a></button>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-12 py-3" id="ShortPortfolioTOC">
+            <div class="StickyContainer">
+                <h3 class="text-center">Mục lục</h3>
+                <ul class="py-2 list-group">
+                  <li class="list-group-item"><a href="#Projects">Dự án</a></li>
+                  <li class="list-group-item"><a href="#About">Về mình</a></li>
+                  <li class="list-group-item"><a href="#Contact">Liên hệ</a></li>
+                </ul>
+            </div>
+          </div>
+          <div class="col-md-9 col-sm-12 py-3" id="ShortPortfolioContent">
+            <div id="Projects" name="Projects" class="pb-3">
+              <h3 class="mb-3">Dự án</h3>
+              <div class="SectionContent">
+                <a href="https://vita3k.org">Vita3K - Giả lập Playstation Vita</a>
+                  <ul class="mt-3">
+                    <li>Phát triển trình dịch động shader, từ mã GPU SGX của PowerVR sang mã SPIR-V có thể chuyển hóa sang các ngôn ngữ shader khác nhờ SPIRV-CROSS</li>
+                    <li>Phát triển nền móng backend graphics sử dụng OpenGL. Lúc dừng đóng góp, tốc độ vẫn đang được cải thiện qua việc thêm các lớp cache (hiện tại đã được một dev khác tối ưu và thêm backend Vulkan, họ giỏi hơn mình :D)</li>
+                    <li>Phát triển nền móng cấu trúc hệ thống âm thanh NGS, bao gồm trình lên lịch, các module decode nhạc và thiết kế cấu trúc OO của hệ thống sát với logic hoạt động trên máy thực</li>
+                    <li>Phát triển hệ thống Achievement, tích hợp với ImGUI</li>
+                  </ul>
+                <a href="https://12l1.com">EKA2L1 - Giả lập Symbian OS (là tác giả chính)</a>
+                  <ul class="mt-3">
+                    <li>Tái phát triển phiên bản nhỏ của lõi Symbian (kernel)</li>
+                    <li>Phát triển các kiểu patch để thay thế một số thư viện cần thiết để chạy các ứng dụng (âm thanh, đồ họa) bằng các phiên bản tương tác trực tiếp với máy chủ chạy giả lập</li>
+                    <li>Thêm hỗ trợ cho tương tác GPU - UI native của Symbian trên giả lập 100% được vẽ bàng GPU</li>
+                    <li>Thêm hỗ trợ cho các ứng dụng S^3 sử dụng các thư viện OpenGL ES 1/2, OpenVG</li>
+                    <li>Thiết kế và làm UI cho phiên bản desktop (sử dụng QT) của giả lập</li>
+                  </ul>
+                <a href="https://github.com/dtt3212/DD_Engine">Dirk Dagger and the Fallen Idol - Unity port</a>
+                  <ul class="mt-3">
+                    <li>
+                  Bản cấy dời trò thám tử trên nền tảng N-Gage 2.0 chạy trên điện thoại Nokia cũ sang Unity, sử dụng gói dữ liệu sẵn có trong dữ liệu trò chơi.</li>
+                    <li>Đơn thuần là trò thám tử, một số minigame sử dụng Physics2D của Unity (mô phỏng gió cản ruồi bay hay độ cân bằng của con lắc đồng hồ).</li>
+                    <li>Phần lớn animation trong bản port sử dụng các tween từ thư viện <a href="http://dotween.demigiant.com/index.php">DOTween.</a></li>
+                    <li>Chơi thử demo tại <a href="https://anni.12l1.com/dirkdagger/dd1demo/">đây.</a></li>
+                  </ul>
+                <a href="https://github.com/EKA2L1/nofun">Nofun - Giả lập nền tảng Mophun</a>
+                  <ul class="mt-3">
+                    <li>Giả lập lớp trung gian được sử dụng trong mấy trò điện thoại cũ (Worms, The DaVinci Code 3D), những trò này được chạy trong môi trường máy ảo có sẵn thư viện cho việc chạy Game, gọi là Mophun.</li>
+                    <li>Dự án sử dụng Unity để vẽ đồ họa, chơi nhạc và video. Dùng Unity cho nhanh, không phải động chạm tới code C++ dịch hơi chậm hay FFMPEG, OpenGL, ... Mặc dù Unity hơi cao cấp 1 chút.</li>
+                  </ul>
+              </div>
+            </div>
+            <div id="About" name="About" class="pb-3">
+              <h3 class="mb-3">Về mình</h3>
+              <div class="row">
+                <div class="col-3 pe-1 justify-content-center d-flex align-items-center">
+                  <img style="height: 70%; width: 70%; object-fit: contain;" src="styling/penguin.png">
+                </div>
+                <div class="col-9 ps-1">
+                  <p>Mình là Đỗ Trọng Thư, các dự án khác của mình hoặc là làm trên một tài khoản Github khác hoặc là tài khoản này.</p>
+                  <p>Các công nghệ mình kiên trì học là có thể học được. Cố nhồi vào đầu thì chắc không. Nhưng khá chắc mấy thứ mình đang làm chả ai dùng/dùng rất ít, đặc biệt Việt Nam đây :P</p>
+                  <p>Các liên hệ của mình ở dưới nếu bạn cần hỏi hay yêu cầu gì đó cá nhân. Mình thường xuyên kiểm tra các liên hệ đó.</p>
+                </div>
+              </div>
+            </div>
+            <div id="Contact" name="Contact">
+              <h3 class="mb-3">Liên hệ</h3>
+              <div class="SectionContent">
+                <ul>
+                  <li><a href="mailto:lmt42@yandex.com">Qua mail</a></li>
+                  <li>Discord: bent#7447</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="PaddingOverflowHidder"></div>
+  </body>
+</html>

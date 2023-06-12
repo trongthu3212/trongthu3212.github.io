@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Dirk Dagger And The Fallen Idol Unity - Demo</title>
+    <link rel="shortcut icon" href="Styling/favicon.ico">
+    <link rel="icon" href="Styling/favicon.ico">
+    <link rel="stylesheet" href="Styling/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="game-container" class="unity-desktop">
+      <div id="background" class="unity-desktop"></div>
+      <div id="background-filter" class="unity-desktop"></div>
+      <div id="unity-wholeview-container">
+        <button id="play-button" type="submit">
+          <img src="Styling/buttonPlay.png" width=128 height=128 />
+        </button>
+        <div id="unity-container" class="unity-desktop">
+          <canvas id="unity-canvas" width=1024 height=576></canvas>
+          <div id="unity-loading-bar">
+            <div id="unity-logo"></div>
+            <div id="unity-progress-bar-empty">
+            <div id="unity-progress-bar-full"></div>
+            </div>
+          </div>
+          <div id="unity-warning"> </div>
+          <div id="unity-footer">
+            <div id="unity-fullscreen-button"></div>
+            <div id="unity-build-title">Dirk Dagger And The Fallen Idol Unity</div>
+          </div>
+        </div>
+      </div>
+      <div id="help">
+        <h2>Controls</h2>
+        <p>
+          <i class="fa-solid fa-arrow-left"></i>
+          <i class="fa-solid fa-arrow-right"></i>
+          <i class="fa-solid fa-arrow-up"></i>
+          <i class="fa-solid fa-arrow-down"></i> : Move the map</p>
+        <p>Enter: Perform action</p>
+        <p>Esc: Exit</p>
+        <br>
+        <p style="font-size: 0.85rem"><b><i>"Back Issues BB" font provided by Blambot for non-commerical use</b></i></p>
+      </div>
+    </div>
+    <script src="Script/GameSetup.js"></script>
+  </body>
+</html>

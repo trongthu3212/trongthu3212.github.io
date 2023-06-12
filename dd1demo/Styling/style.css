@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'BackIssuesBB';
+  src: url('BackIssuesBB_reg.ttf')
+}
+body { padding: 0; margin: 0; font-family: 'BackIssuesBB'; }
+#game-container {
+	position: absolute;
+  width: 100%;
+  height: max-content;
+}
+#background {
+  position: absolute;
+  background: url('Idol_NoText.png');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  opacity: 0.7;
+}
+#background-filter {
+  position: absolute;
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+}
+#unity-wholeview-container {
+  height: 100vh;
+  width: 100%;
+}
+#unity-container {
+  position: relative;
+  width: max-content;
+  height: max-content;
+  padding: 0px;
+}
+#play-button {
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  width: max-content;
+  height: max-content;
+  border: 0px;
+  background-color: transparent;
+}
+#play-button:active > img {
+  opacity: 0.8;
+  transform: scale(0.9, 0.9);
+}
+#unity-container.unity-desktop { left: 50%; top: 50vh; transform: translate(-50%, -50%); }
+#unity-container.unity-mobile { width: 100%; height: 100% }
+#unity-canvas { background: #231F20 }
+.unity-mobile #unity-canvas { width: 100%; height: 100% }
+#unity-loading-bar { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: none }
+#unity-logo { width: 154px; height: 130px; background: url('EKA2L1_Icon.png') no-repeat center; background-size: cover; }
+#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 20px; margin-left: 6.5px; background: url('progress-bar-empty-dark.png') no-repeat center }
+#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 20px; background: url('progress-bar-full-dark.png') no-repeat center }
+#unity-footer { position: relative }
+.unity-mobile #unity-footer { display: none }
+#unity-build-title { text-align: center; line-height: 38px; font-size: 18px; max-width: 100%; max-height: 100%; width: 100%; height: 100%; padding-top: 5px; }
+#unity-fullscreen-button { float: right; width: 38px; height: 38px; background: url('fullscreen-button.png') no-repeat center }
+#unity-warning { position: absolute; left: 50%; top: 5%; transform: translate(-50%); background: white; padding: 10px; display: none }
+#help {
+  position: relative;
+  text-align: center;
+  width: 100%;
+}

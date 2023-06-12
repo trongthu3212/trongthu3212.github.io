@@ -1,0 +1,58 @@
+@import url("../external/mdb/css/mdb.dark.min.css");
+
+@media only screen and (max-width: 768px) {
+  #ShortPortfolioTOC {
+    display: none;
+  }
+
+  #ShortPortfolioContent div {
+    scroll-margin-top: 14rem;
+  }
+  
+  #PaddingOverflowHidder {
+    display: none;
+  }
+  
+  #ShortPortfolioContainerInner {
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  #ShortPortfolioContent {
+    padding-left: 3rem;
+  }
+  
+  .StickyContainer {
+    position: sticky;
+    padding-right: 2.5rem;
+    width: 100%;
+    top: -0.5rem;
+  }
+  
+  #PaddingOverflowHidder {
+    background-color: #303030;
+    width: 100%;
+    height: 2rem;
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+  }
+
+  #ShortPortfolioContent div {
+    scroll-margin-top: 2.5rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #ShortPortfolioContent {
+    padding-left: 5rem;
+  }
+}
+
+body {
+  font-family: Noto Sans;
+}
