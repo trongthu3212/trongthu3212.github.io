@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <script src="external/mdb/js/mdb.min.js"></script>
+    <title>Dirk Dagger and the Fallen Idol Port</title>
+    <link rel="stylesheet" href="../styling/theme.css">
+    <link rel="icon" href="../styling/penguin.png">
+    <link href='https://fonts.googleapis.com/css?family=Noto Sans' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="description" content="Thông tin ngắn về Đỗ Trọng Thư và dự án.">
+    <meta name="author" content="Đỗ Trọng Thư">
+
+    <meta property="og:title" content="Count Master Clone">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dtt3212.github.io">
+    <meta property="og:description" content="Count Master Clone">
+    <style>
+      div {
+        margin-bottom: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+      <div class="mx-3 my-4 container mx-auto" id="ShortPortfolioContainer">
+        <div class="row">
+          <div class="col-sm-12">
+            <div>
+              <h1><b>Dirk Dagger and the Fallen Idol (Port)</b></h1>
+            </div>
+            <div>
+              <h2><b>Cách chơi</b></h2>
+                <li>Trên PC/WebGL: Dùng tay cầm/bàn phím (mũi tên) để di chuyển, tương tác với cảnh</li>
+                <li>Trên điện thoại: Dùng control ảo di chuyển, tương tác với cảnh</li>
+            </div>
+            <div>
+              <h2><b>Tải xuống</b></h2>
+                <ul>
+                  <li><a href="webplayer">Bản WebGL Demo</a></li>
+                  <li><a href="https://mega.nz/file/6vYFQRYY#X08zwirHVX2Gwf7rOekigi29W_spHcvMLAQZjIMzfW0">Android</a></li>
+                  <li><a href="https://mega.nz/file/nnR1mbga#oV-GOuGzWDySQ8gJ6TCcsQFgZuDV5hk1AcJ6yUAoYnw">Windows</a></li>
+              </ul>
+            </div>
+            <div>
+              <h2><b>Đường dẫn khác</b></h2>
+                <ul>
+                  <li><a href="https://github.com/RadratSoftworks/DD_Engine/tree/full_game_company">Mã nguồn</a></li>
+                </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="PaddingOverflowHidder"></div>
+  </body>
+</html>
