@@ -51,7 +51,7 @@
                 </ul>
             </div>
           </div>
-          <div class="col-md-6 col-sm-12" style="text-align: center">
+          <div class="col-md-6 col-sm-12">
             <img src="screenshot.png" style="max-height: 80%; max-width: auto;"/>
           </div>
         </div>
